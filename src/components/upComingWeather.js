@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, SafeAreaView , StyleSheet, StatusBar, FlatList} from 'react-native';
+import { View, Text, SafeAreaView , StyleSheet, StatusBar, FlatList, ImageBackground} from 'react-native';
 import { Feather} from '@expo/vector-icons'
 
 const UpcomingWeather = () => {
-    const { container, item } = style
+    const { container, item, image } = style
 
     const DATA = [
         {
@@ -65,14 +65,16 @@ const UpcomingWeather = () => {
     
     return ( 
         <SafeAreaView style={container}>
-            <View>
-               <Text>Upcoming Weather</Text>
-               <FlatList
-               data={DATA}
-               renderItem={renderItem}
-               keyExtractor={(item) => item.dt_txt}
-               />
-            </View>
+            
+             <View>
+                <Text>Upcoming Weather</Text>
+                <FlatList
+                data={DATA}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.dt_txt}
+                />
+             </View>
+           
         </SafeAreaView>
      );
 }
@@ -80,17 +82,22 @@ const UpcomingWeather = () => {
     container:{
         flex:1,
         padding:StatusBar.currentHeight||0,
-        backgroundColor:'red'   
+        backgroundColor:'wheat'   
     },
     item:{
-        marginHorizontal:16,
-        marginVertical:8,
+        marginHorizontal:1,
+        marginVertical:10,
         justifyContent:'space-around',
         alignItems:'center',
         padding:10,
         flexDirection:'row',
-        borderWidth:5,
+        borderWidth:2,
         backgroundColor:'pink'
+    },
+    image:{
+       flex:1,
+       resizeMode:'cover',
+   
     }
  })
 export default UpcomingWeather;

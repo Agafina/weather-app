@@ -1,12 +1,17 @@
 import React from 'react';
-import CurrentWeather from './src/components/currentWeather';
-import UpcomingWeather from './src/components/upComingWeather';
+import { NavigationContainer } from '@react-navigation/native';
+import Tabs from './src/components/Tabs';
+
+
+
+
 
 
 const App = () => {
   return(
-    <UpcomingWeather />
-  //  <CurrentWeather />
+   <NavigationContainer>
+      <Tabs />
+   </NavigationContainer>
   )
 }
 
